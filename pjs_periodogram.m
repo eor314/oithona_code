@@ -1,0 +1,1 @@
+function [pspec,freq] = pjs_periodogram(tseries,taxis)%return power spectrum [pspec,freq]=power(tseries,taxis);%with the mean squared in the 0 frequencyn=length(tseries);nyq=1/(2*(taxis(2)-taxis(1)));freq = nyq*(1:(n/2))/(n/2) ;spec = fft(tseries) ;power = spec.*conj(spec)/(0.5*(n^2)) ;pspec = 2*power(2:n/2+1) ;
